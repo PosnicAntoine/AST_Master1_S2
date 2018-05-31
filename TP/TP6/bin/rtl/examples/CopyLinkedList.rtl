@@ -1,0 +1,105 @@
+func Main(a)
+  entry:
+    t.1 = Alloc(1)
+    t.0 = call CLL.Start(t.1)
+    PrintInt(t.0)
+    ret 
+
+func CList.Init(this)
+  entry:
+    [this+3] = 1
+    ret 1
+
+func CList.InitNew(this v_elem v_next v_end)
+  entry:
+    [this+3] = v_end
+    [this+1] = v_elem
+    [this+2] = v_next
+    ret 1
+
+func CList.Insert(this new_elem)
+  entry:
+    aux02 = Alloc(4)
+    ret_val = call CList.InitNew(aux02 new_elem this 0)
+    ret aux02
+
+func CList.GetElem(this)
+  entry:
+    t.0 = [this+1]
+    ret t.0
+
+func CList.SetElem(this e)
+  entry:
+    [this+1] = e
+    ret 1
+
+func CList.GetNext(this)
+  entry:
+    t.0 = [this+2]
+    ret t.0
+
+func CList.SetNext(this v_next)
+  entry:
+    [this+2] = v_next
+    ret 1
+
+func CList.GetEnd(this)
+  entry:
+    t.0 = [this+3]
+    ret t.0
+
+func CList.SetEnd(this b)
+  entry:
+    [this+3] = b
+    ret 1
+
+func CList.Print(this)
+  entry:
+    aux01 = this
+    var_end = [this+3]
+    var_elem = [this+1]
+    goto while0_test
+  while0_test:
+    t.0 = Sub(1 var_end)
+    if t.0 goto while0_body else while0_end
+  while0_body:
+    PrintInt(var_elem)
+    aux01 = call CList.GetNext(aux01)
+    var_end = call CList.GetEnd(aux01)
+    var_elem = call CList.GetElem(aux01)
+    goto while0_test
+  while0_end:
+    ret 1
+
+func CLL.Start(this)
+  entry:
+    head = Alloc(4)
+    aux01 = call CList.Init(head)
+    head = call CList.Insert(head 1)
+    head = call CList.Insert(head 2)
+    head = call CList.Insert(head 3)
+    head = call CList.Insert(head 4)
+    head = call CList.Insert(head 5)
+    aux01 = call CList.Print(head)
+    PrintInt(11111111)
+    copy = Alloc(4)
+    current = copy
+    goto while0_test
+  while0_test:
+    t.1 = call CList.GetEnd(head)
+    t.0 = Sub(1 t.1)
+    if t.0 goto while0_body else while0_end
+  while0_body:
+    t.2 = call CList.GetElem(head)
+    aux01 = call CList.SetElem(current t.2)
+    aux01 = call CList.SetEnd(current 0)
+    t.3 = Alloc(4)
+    aux01 = call CList.SetNext(current t.3)
+    current = call CList.GetNext(current)
+    head = call CList.GetNext(head)
+    goto while0_test
+  while0_end:
+    aux01 = call CList.SetEnd(current 1)
+    aux01 = call CList.Print(copy)
+    ret 0
+

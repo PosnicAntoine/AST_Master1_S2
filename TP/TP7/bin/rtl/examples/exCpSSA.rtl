@@ -1,0 +1,21 @@
+func Main(c0)
+  entry:
+    a1 = 1
+    b1 = 1    
+    goto test
+  test:
+    c3 = phi [c0,entry], [c2,corps]
+    b3 = phi [b1,entry], [b2,corps]
+    a3 = phi [a1,entry], [a2,corps]
+    t = Lt(b1 10)
+    if t goto corps else fin
+  corps:
+    b2 = Add (a3 b3)
+    a2 = Sub(2 a3)
+    c1 = Sub(a3 1)
+    d1 = b2
+    d2 = Mul(c1 d1)
+    c2 = Add(d2 c1)
+    goto test
+  fin:
+    ret c3

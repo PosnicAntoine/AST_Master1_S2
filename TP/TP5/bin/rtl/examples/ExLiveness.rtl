@@ -1,0 +1,13 @@
+func Main(n c)
+  entry:
+    a = 0
+    goto l1
+  l1:  
+    b = Add(a 1)
+    c = Add(c b)
+    a = Mul(b 2)
+    t = Lt(a n)
+    if t goto l1 else if0_end
+  if0_end:
+    ret c
+    

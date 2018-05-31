@@ -1,0 +1,16 @@
+func Main ()
+  entry:
+    a = 5
+    c = 1
+    goto l1
+  l1:
+    t.0 = Lt(a c)
+    if t.0 goto l2  else suite
+  suite:
+    c = Add(c c)
+    goto l1
+  l2:
+    a = Sub(c a)
+    c = 0
+    PrintInt (c)
+    ret a

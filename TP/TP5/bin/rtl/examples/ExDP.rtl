@@ -1,0 +1,15 @@
+func Main(num)
+  entry:
+    y = num
+    z = 1
+    goto while0_test
+  while0_test:
+    t.0 = Lt(1 y)
+    if t.0 goto while0_body else while0_end
+  while0_body:
+    z = Mul(z y)
+    y = Sub(y 1)
+    goto while0_test
+  while0_end:
+    y = 0
+    ret z

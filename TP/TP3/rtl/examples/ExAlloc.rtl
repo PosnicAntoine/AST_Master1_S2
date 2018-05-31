@@ -1,0 +1,9 @@
+func Main(a b c d)
+  entry:
+    t.0 = 2
+    t.1 = Add(a b)
+    t.2 = Add(t.1 c)
+    t.3 = Add(t.2 d)
+    t.4 = Add(t.0 t.2)
+    ret t.3
+

@@ -1,0 +1,17 @@
+func Main(a b d e)
+entry:
+  t.0 = Lt(a b)
+  if t.0 goto if0_then else if0_else
+if0_then:
+  x = Add(a b)
+  y = Add(x 1)
+  goto if0_end
+if0_else:
+  x = Add(d e)
+  y = Add(a b)
+  goto if0_end
+if0_end:
+  z = Add(a b)
+  t = Add(x 1)
+  ret t
+  

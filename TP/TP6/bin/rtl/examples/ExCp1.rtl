@@ -1,0 +1,26 @@
+func Main()
+  entry:
+    a = 1
+    b = 1    
+    goto test
+  test:
+    t.0 = Lt(b 10)
+    if t.0 goto corps else fin
+  corps:
+                         // a=1 b=T c=0 d=0
+    b = Add (a b)
+                         // a=1 b=T c=0 d=0
+    a = Sub(2 a)
+                         // a=1 b=T c=0 d=0
+    c = Sub(a 1)
+                         // a=1 b=T c=0 d=0
+    d = b
+                         // a=1 b=T c=0 d=T
+    d = Mul(c d)
+                         // a=1 b=T c=0 d=0
+    c = Add(d c)
+                         // a=1 b=T c=0 d=0
+    goto test
+  fin:
+                         // a=1 b=T c=0 d=0
+    ret c

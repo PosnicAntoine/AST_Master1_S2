@@ -1,0 +1,26 @@
+class Main {
+    public static void main(String[] a){
+	Segment s;
+	Point p;
+	Point p1;
+	Point p2;
+	int i;
+	p = new Point();
+	i = p.set(1,2);
+	p1 = new Point();
+	i = p1.set(-1,1)
+	p2 = new Point();
+	i = p2.set(4,3);
+	s = Segment();
+	i = s.set(p1,p2);
+	System.out.println(equiDistant(p,s));
+	s = Segment();
+	i = s.set(p1,p);
+	System.out.println(equiDistant(p2,s));	
+    }
+}
+
+class Point {
+    int x;
+    int y;
+    int Init(

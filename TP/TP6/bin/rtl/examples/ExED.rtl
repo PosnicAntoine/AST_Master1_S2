@@ -1,0 +1,16 @@
+func Main(a b)
+  entry:
+    x = Add(a b)
+    y = Mul(a b)
+    goto while0_test
+  while0_test:
+    t.1 = Add(a b)
+    t.0 = Lt(t.1 y)
+    if t.0 goto while0_body else while0_end
+  while0_body:
+    a = Add(a 1)
+    x = Add(a b)
+    goto while0_test
+  while0_end:
+    ret a
+    

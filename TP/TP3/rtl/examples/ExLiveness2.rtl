@@ -1,0 +1,38 @@
+func Main()
+ entry:
+    tab = Alloc(40)
+    n = 3
+    m = 0
+    v = 0
+    goto suite
+ suite:
+    t.1 = Add(v 1)
+    t.0 = Lt(n t.1)
+    if t.0 goto fin else suite2
+ suite2:
+    r = v
+    s = 0
+    goto suite3
+ suite3:
+    t.2 = Lt(r n)
+    if t.2 goto if_then else suite4
+ suite4:
+    v = Add(v 1)
+    goto suite
+ if_then:
+    t.5 = Add(tab r)
+    [t.5+1] = 5
+    x = [t.5+1]
+    s = Add(s x)
+    t.3 = Add(m 1)
+    t.4 = Lt(s t.3)
+    if t.4 goto if_then2 else suite5
+ suite5:
+    m = s
+    goto if_then2
+ if_then2:   
+    r = Add(r 1)
+    goto suite3
+ fin:
+    ret m
+   

@@ -1,0 +1,28 @@
+func Main()
+  entry:
+    a = 1
+    b = 2
+    goto suite
+  suite:
+    c = Add(a b)
+    d = Sub(c a)
+    goto test_boucle
+  test_boucle:
+    t.0 = Lt(b 10)
+    if t.0 goto corps_boucle else fin_boucle
+  corps_boucle:
+    b = Add (a b)
+    e = Sub(c a)
+    goto test_boucle
+  fin_boucle:
+    t.1 = Lt(d 20)
+    if t.1 goto corps_boucle2 else fin_boucle2
+  corps_boucle2:
+    d = Add(b d)
+    d = Add(a b)
+    e = Add(e 1)
+    goto fin_boucle
+  fin_boucle2:
+    a = Mul(b d)
+    b = Sub(a d)
+    ret t

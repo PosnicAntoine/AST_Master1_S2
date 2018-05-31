@@ -1,0 +1,17 @@
+func Main()
+  entry:
+    j = 0
+    k = 0
+    g = Add(j 12)
+    h = Sub(k 1)
+    f = Mul(g h)
+    e = Add(j 8)
+    m = Add(j 16)
+    b = Add(f 6)
+    c = Add(e 8)
+    d = c
+    k = Add(m 4)
+    j = b
+    y = Add(d j)
+    z = Add(y k)
+    ret z

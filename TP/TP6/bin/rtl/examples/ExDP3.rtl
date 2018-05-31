@@ -1,0 +1,16 @@
+func Main(x y z)
+  entry:
+    y = x
+    z = 1
+    goto l
+  l:
+    b = Lt(1 y)
+    if b goto l1 else l2
+  l1:  
+    z = Mul(z y)
+    y = Sub(y 1)
+    goto l
+  l2:
+    y = 0
+    ret 0	
+    

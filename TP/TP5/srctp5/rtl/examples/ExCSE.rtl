@@ -1,0 +1,29 @@
+func Main(a)
+  entry:
+    o = Alloc(1)
+    i = 1
+    n = 10
+    r = i
+    goto l
+  l:
+    t = Lt(0 n)
+    c = 42
+    if t goto l1 else l2
+  l1:
+    r = Mul(r n)
+    n = call S(n i c)
+    [o] = c
+    t1 = [o]
+    goto end
+  l2:
+    PrintInt(r)
+    t2 = [o]
+    goto end
+   end:
+    t = [o]
+    ret c
+    
+func S(x y z)
+  entry:
+    t = Sub(x y)    
+    ret t
